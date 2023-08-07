@@ -1,0 +1,41 @@
+@font-face {
+  font-family: CourierPrimer;
+  src: url('/fonts/courier_prime.ttf');
+}
+
+@font-face {
+  font-family: DMSans;
+  src: url('/fonts/dm_sans.ttf');
+}
+
+body {
+  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.post {
+  border-top: 4px solid black;
+  padding-bottom: 15px;
+}
+
+.post-title {
+  font-weight: bold;
+}
+
+.posts {
+  border-bottom: 4px solid black;
+}
+
+.post-content {
+  text-align: justify;
+}
+
+.post-table-row-p {
+  min-height: 100px;
+}
+
+.selfie-container {
+  margin: auto;
+  width: 256px;
+}

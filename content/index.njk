@@ -1,0 +1,40 @@
+---
+layout: base.njk
+eleventyImport:
+collections: ["post"]
+---
+
+<section class="hero is-medium">
+  <div class="container is-max-desktop pl-2 pr-2">
+    <div class="hero-body is-align-items-start ">
+      <p class="title">
+        Hello, I'm David
+      </p>
+      <p class="subtitle">
+        I'm a PhD candidate researching Artificial Intelligence at INRIA Paris.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop pl-2 pr-2">
+        <h1 class="title">Latest posts</h1>
+        <ul class="posts" >
+          {%- for post in collections.post | reverse -%}
+          <li class="post">
+            <p><time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time></p>
+            <h2 class="title is-4"><a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a></h2>
+            <div class="tags">
+              {%- for topic in post.data.topics -%}
+              <span class="tag">{{ topic }}</span>
+              {%- endfor -%}
+            </div>
+          </li>
+          {%- endfor -%}
+        </ul>
+        <a href="/posts/">More posts</a>
+  </div>
+</section>
