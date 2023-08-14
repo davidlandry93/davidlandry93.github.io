@@ -4,81 +4,55 @@ date: 2023-08-14
 image: nushell_crop.png
 tags:
   - Linux
+  - Nushell
 ---
 
 
-It's been a while since I got exciting about shells before. I have experimented with
-[[Zsh]], [[Fish]] in the past, but always reverted to [[Bash]] by lack of interest. I
-think [[Nushell]] is different, because it makes one key realization: its all tables and
-dicts. 
+It's been a while since I got excited about shells.
+I experimented with [Zsh](https://www.zsh.org/) and [Fish](https://fishshell.com/) in the past, but always reverted to Bash.
+I think these shell alternatives don't provide enough features for me to set them up, as I go from one system to the next.
 
-In the Bash ecosystem, the responsibilities for filtering and manipulating the data are
-split between the command itself and utilities such as [[grep]] or [[awk]] or `sort`.
-For instance, `ls` gives you the `-S` option to sort files by size. If you are using
-`du` instead of `ls`, this [stackoverflow
+Recently, I came across the [Nushell project](https://www.nushell.sh/), and it really is a joy to use.
+Nushell is a contemporary, Rust-based shell interpreter.
+It borrows concepts from a lot of places, including PowerShell, TypeScript, and functional programming.
+But I think what makes it better than the other shell alternatives is one key realization: **it's all tables and dicts**.
+
+# The problem
+
+In the Bash ecosystem, data manipulation is split between the command itself and utilities. 
+Source commands like `ls` and `top` provide text data, which is either processed in-place or through a utility like `grep`, `awk` or `sort`. 
+
+For example, say you want to sort data inside your shell.
+`ls` gives you the `-S` flag to sort files by size.
+If you are using `du`, this [Stack Overflow
 thread](https://superuser.com/questions/368784/how-can-i-sort-all-files-by-size-in-a-directory)
-suggests the odd `du -ha | sort -h`. Here the same responsibilities are this time split
-between two programs. If you are dealing with a list of processes, maybe you are using
-`ps`. This time, you can sort the table using the `ps --sort` flag, as  well as a
-specialized vocabulary to select which column to sort by. Same operation, three
-different syntaxes. This kind of incongruity is why I reach for google every time I want
-to write a command, even with 15 years of experience using linux.
+suggests `du -ha | sort -h` to do the same thing. 
+The story is the same for list of processes.
+With `ps`, you can sort the table using the `ps --sort` flag, but you need to learn a specialized vocabulary to select the columns to sort by.
 
-Once someone finally realizes that most of these utilities deal with tables and dicts,
-there are massive improvements to be made. We can create a generic set of structured
-data manipulation primitives, and simply pipe our structured data through it. These
-primitives are Nushell's `sort-by`, `get`, etc. I think of them as a universal set of
-flags that you can use on all commands, instead of having one set of flags per command.
-Through a software development lens, we could say that the contract between the programs
-in my shell has changed. The source programs must produce structured data instead of
-text. In return, they don't have to provide as much manipulation and filtering logic.
-The responsibilities between the different programs are better defined, and it reduces
-the overall complexity of the toolset. 
+With three basic commands, we learned three ways to sort by a column.
+This kind of complexity is why I reach for Google very often when I write a command, even with 15 years of experience using Linux.
+It's why people are developing very elaborate terminal emulators to translate natural language into Bash commands.
 
-# Retrocompatibility
+# The solution
 
-Another reason I think Nushell is great is that it has good compatibility with existing
-command line utilities. If the output can be parsed, . 
-
-The best example I can think of is `squeue`. It is a command line utility provided by
-the [[SLURM]] scheduler to . The documentation for that utility is ....... long, and
-full of specialized flags to filter and sort the informations. With Nushell, you only
-need one flag: `--json`. Then, you can use the syntax you've already learned to perform
-the same manipulations.
-
+Once someone finally realizes that most of these utilities deal with tables and dicts, there are improvements to be made. 
+A single, generic set of data manipulation utilities can be developed.
+These primitives are Nushell's `sort-by`, `get`, etc. 
+Here is how Nushell lets you sort data by a column:
 ```
-example of a a clever thing to do with squeue
+ls | sort-by size
 ```
-I suspect Nushell will eat many of my workflows this way in the future. 
+Notice how `ls` isn't involved in the sorting.
 
-# Nushell and Python
+Through a software development lens, we could say that the contract between the program and the shell has changed. 
+The source programs must now produce structured data.
+It can be any one of Nushell's supported formats, including csv, json, [Parquet](https://parquet.apache.org/)...
+In return, CLIs don't have to provide data display and manipulation logic.
+The responsibilities between the different programs are better defined, and it reduces the complexity of the toolkit as a whole. 
 
->[!warning] remove this, it's half baked and the post is too long. I'll come back to it in another post if it pans out
-
-Nushell's `http` and ......(datafarme) ....... are other highlights for me. As soon as a
-remote resource was involved, I always reverted to [[Python]] . I never really took the
-time to understand [[curl]] or [[wget]]. {stencence about dataframe} Thanks to http and
-......., a lot of what was previously a script is now a one-liner. 
-
-It is true to a point where I started thinking: what is the relationship between Nushell
-and Python? How to they itneract with each other? Manipulating dataframes was an obvious
-use case for Python. I wonder if nushell will absorb some of these responsibilities in
-my day to day. 
-
-Another approach is to use nushell inside python. Does it make sense to want to be able
-to use Nushell programs inside python code, for instance? To reuse that structured data
-manipulation syntax that I already use to sort files and list processes on my OS? To be
-clear, what I'm suggesting is
-```python
-df = pd.read_parquet('my_dataframe.parquet')
-# usual python code
-new_dataframe = nushell(df, '...... valid sequence of nushell ops')
-```
-
-It seems like a stretch. The compilation-serialization-deserialization overhead that we
-need to send a dataframe to nushell probably makes this impractical. I'm already fluent
-in python, so I would probably end up manipulating the dataframe in python directly. But
-Rust has surprised us before.
-
-Only time will tell.
-
+There are many more subjects I would like to touch on about Nushell.
+I would like to study how quickly it can be made compatible with arbitrary tools.
+The [SLURM](https://slurm.schedmd.com/documentation.html) CLI is a tool I interact with daily that produces a lot of tables and dicts.
+How easily can I manipulate them using Nushells utilities?
+I think this kind of compatibility is key to making Nushell stick inside my toolbox.

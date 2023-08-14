@@ -17,30 +17,32 @@ collections: ["post"]
   </div>
 </section>
 
-
-
-
 <section class="section">
   <div class="container is-max-desktop">
-  <div class="column is-10 is-offset-1">
+    <div class="column is-10 is-offset-1">
       <h2 class="title is-4">Latest posts</h1>
       <div class="columns is-multiline">
         {%- for post in collections.post | limit(5) | reverse -%}
-        <div class="column is-4">
-          <div class="card post">
-            <div class="card-image">
-              <figure class="image is-5by3"><img src="/images/{{post.data.image}}" /> </figure>
-            </div>
-            <div class="card-content">
-              <h2 class="title is-4"><a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a></h2>
-              <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+          <div class="column is-4">
+            <div class="card post">
+              <div class="card-image">
+                <figure class="image is-5by3"><img src="/images/{{post.data.image}}"/>
+                </figure>
+              </div>
+              <div class="card-content">
+                <h2 class="title is-4">
+                  <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+                </h2>
+                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+              </div>
             </div>
           </div>
-        </div>
         {%- endfor -%}
-          <div class="column is-4 more-posts"><a href="/posts/">More posts</div></div>
-        </div>  
+        <div class="column is-4 more-posts">
+          <a href="/posts/">More posts</a>
+        </div>
       </div>
+    </div>
   </div>
-  </div>
+</div>
 </section>
