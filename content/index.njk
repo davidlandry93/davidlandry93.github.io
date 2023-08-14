@@ -19,22 +19,28 @@ collections: ["post"]
 
 
 
+
 <section class="section">
-  <div class="container is-max-desktop pl-2 pr-2">
-        <h1 class="title">Latest posts</h1>
-        <ul class="posts" >
-          {%- for post in collections.post | reverse -%}
-          <li class="post">
-            <p><time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time></p>
-            <h2 class="title is-4"><a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a></h2>
-            <div class="tags">
-              {%- for topic in post.data.topics -%}
-              <span class="tag">{{ topic }}</span>
-              {%- endfor -%}
+  <div class="container is-max-desktop">
+  <div class="column is-10 is-offset-1">
+      <h2 class="title is-4">Latest posts</h1>
+      <div class="columns is-multiline">
+        {%- for post in collections.post | reverse -%}
+        <div class="column is-4">
+          <div class="card post">
+            <div class="card-image">
+              <figure class="image is-5by3"><img src="/images/{{post.data.image}}" /> </figure>
             </div>
-          </li>
-          {%- endfor -%}
-        </ul>
-        <a href="/posts/">More posts</a>
+            <div class="card-content">
+              <h2 class="title is-4"><a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a></h2>
+              <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+          <div class="column is-4 more-posts"><a href="/posts/">More posts</div></div>
+        </div>  
+      </div>
+  </div>
   </div>
 </section>

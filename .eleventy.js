@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: "content",
             includes: "../_includes",
-            date: "../_data"
+            data: "../_data"
         }
     }
 };

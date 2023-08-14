@@ -1,41 +1,211 @@
-@font-face {
-  font-family: CourierPrimer;
-  src: url('/fonts/courier_prime.ttf');
-}
+@import "fonts.css";
 
-@font-face {
-  font-family: DMSans;
-  src: url('/fonts/dm_sans.ttf');
-}
-
+html,
 body {
-  background-color: white;
-  padding-left: 50px;
-  padding-right: 50px;
+  background-color: #FAFAFA;
+  font-family: Inter;
+  color: black;
 }
 
-.post {
-  border-top: 4px solid black;
-  padding-bottom: 15px;
+a {
+  color: black;
+  text-decoration: underline;
 }
 
-.post-title {
+.hero-body .title {
+  font-family: InterTight;
+}
+
+.hero-body .subtitle {
+  color: #666;
+}
+
+.title,
+.subtitle {
+  font-family: InterTight;
+}
+
+.title {
+  color: black;
+}
+
+h1 .title {
+  font-family: InterTight;
+}
+
+h3 .subtitle {
   font-weight: bold;
 }
 
-.posts {
-  border-bottom: 4px solid black;
+.navbar {
+  font-family: sans-serif;
+  font-weight: bold;
+  /* box-shadow: 0px -15px 20px black; */
+  background-color: #FAFAFA;
 }
 
-.post-content {
-  text-align: justify;
+.navbar-item {
+  align-items: end;
 }
 
-.post-table-row-p {
-  min-height: 100px;
+
+.navbar-brand a {
+  font-family: InterTight;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
+
+.navbar-brand a.navbar-item.smaller {
+  font-size: 1.0rem;
+  align-items: end;
+  border-bottom: 0;
+  text-decoration: underline;
+}
+
+
+.card-container {
+  display: flex;
+}
+
+.post {
+  min-height: 250px;
+}
+
+
+
+.post:hover {
+  /* box-shadow: 5px 5px 0px #c8b9f0; */
+}
+
+
+
+a:hover {
+  color: #666;
+  border-bottom-color: #666;
+}
+
+
 
 .selfie-container {
   margin: auto;
   width: 256px;
+}
+
+.tags .tag {
+  /* background-color: #c8b9f0; */
+  border: 1px solid black;
+}
+
+div .tags {
+  position: absolute;
+  bottom: 0;
+}
+
+.more-posts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+div .card-content {
+  min-height: 150px;
+}
+
+.card-content time {
+  color: #666;
+  font-weight: 500;
+}
+
+.post-image {
+  height: auto;
+  float: left;
+  margin: 6px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.post .subtitle {
+  font-weight: bold;
+}
+
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5 {
+  font-family: InterTight;
+  color: black;
+}
+
+.content h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.content h2 {
+  font-size: 1.3rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.content h3 {
+  font-size: 1.1rem;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar-item {
+  color: black;
+}
+
+a.navbar-item:hover {
+  color: #666;
+}
+
+.navbar-brand a.navbar-item {
+  text-decoration: none;
+}
+
+.title {
+  border-bottom: 1px solid black;
+}
+
+.title.is-4 {
+  border-bottom: none;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+}
+
+.table {
+  background-color: transparent;
+}
+
+.image img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-content .title {
+  margin-bottom: 0;
+}
+
+.navbar-item.first {
+  padding-left: 0;
+}
+
+.post-table td {
+  padding-left: 0;
+}
+
+.post-title-table {
+  padding-right: 0;
+}
+
+.post-title-table a {
+  font-weight: bold;
 }

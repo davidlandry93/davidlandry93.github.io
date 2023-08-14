@@ -2,17 +2,24 @@
 layout: base.njk
 ---
 
-<div class="section">
+<link rel="stylesheet" href="/post.css" />
+<div class="section post">
   <div class="container is-max-desktop">
     <div class="column is-8 is-offset-2">
-  <h2 class="title">{{ title }}<h2>
-  <h3 class="subtitle">by <a>David</a> on {{ date | readableDate }}</h3>
 
-  <div class="tags">
+    <div class="post-header-bg" style="background-image: url('/images/{{ image }}')">
+      <div class="post-header-overlay">
+      </div>
+    </div>
+    <div class="post-header">
+      <h1 class="title post-title">{{ title }}</h1>
+      <h2 class="subtitle">{{ date | readableDate("yyyy.LL.dd")  }}</h3>
+    </div>
+  {# <div class="tags">
   {% for topic in topics %}
     <span class="tag"><a href="/topics/{{topic}}">{{topic}}</a></span>
   {% endfor %}
-  </div>
+  </div> #}
 
   <div class="content has-text-justified">
     {{ content | safe }}

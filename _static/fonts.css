@@ -1,0 +1,25 @@
+@font-face {
+  font-family: CourierPrimer;
+  src: url('/fonts/courier_prime.ttf');
+}
+
+@font-face {
+  font-family: DMSans;
+  src: url('/fonts/dm_sans.ttf');
+}
+
+
+@font-face {
+  font-family: Anton;
+  src: url('/fonts/anton.ttf');
+}
+
+@font-face {
+  font-family: Inter;
+  src: url('/fonts/inter.ttf');
+}
+
+@font-face {
+  font-family: InterTight;
+  src: url('/fonts/intertight.ttf');
+}
