@@ -14,6 +14,10 @@ module.exports = function (eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format || "yyyy-LL-dd");
     });
 
+    eleventyConfig.addFilter("limit", function (array, limit) {
+        return array.slice(0, limit);
+    });
+
     eleventyConfig.addPassthroughCopy({ "_static/": "/" });
 
     return {

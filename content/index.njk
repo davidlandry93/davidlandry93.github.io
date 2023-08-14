@@ -25,7 +25,7 @@ collections: ["post"]
   <div class="column is-10 is-offset-1">
       <h2 class="title is-4">Latest posts</h1>
       <div class="columns is-multiline">
-        {%- for post in collections.post | reverse -%}
+        {%- for post in collections.post | limit(5) | reverse -%}
         <div class="column is-4">
           <div class="card post">
             <div class="card-image">
