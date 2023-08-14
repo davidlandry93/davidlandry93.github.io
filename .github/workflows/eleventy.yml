@@ -31,8 +31,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - run: npm run build
+      - name: Install NPM dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Build website using Eleventy
+        run: "npm run build"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
