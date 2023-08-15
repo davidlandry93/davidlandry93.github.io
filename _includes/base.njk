@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQG84G1BHT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-SQG84G1BHT');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/bulma.min.css">
@@ -23,7 +35,7 @@
       </div>
     </header>
     <main>
-        {{ content | safe }}
+      {{ content | safe }}
     </main>
     <footer class="footer has-text-centered">
       <p>
