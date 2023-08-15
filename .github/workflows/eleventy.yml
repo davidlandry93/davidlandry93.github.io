@@ -1,11 +1,11 @@
 name: Deploy Eleventy to Github Pages
 
 on:
-  push:
+  - push:
     branches: [$default-branch]
-  workflow-dispatch:
+  - workflow-dispatch
 
-premissions:
+permissions:
   contents: read
   pages: write
   id-token: write
