@@ -31,15 +31,15 @@ collections: ["post"]
               </div>
               <div class="card-content">
                 <h2 class="title is-4">
-                  <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+                  <a href="{{ post.url }}" class="post-title">{{ post.data.post_title }}</a>
                 </h2>
-                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+                <time datetime="{{ post.data.post_date | htmlDateString }}">{{ post.data.post_date | readableDate("yyyy.LL.dd") }}</time>
               </div>
             </div>
           </div>
         {%- endfor -%}
         <div class="column is-4 more-posts">
-          <a href="/posts/">More posts</a>
+          <a href="/posts/">All posts</a>
         </div>
       </div>
     </div>

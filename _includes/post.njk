@@ -1,8 +1,12 @@
 ---
+page_title: David Landry - A blog about Artificial Intelligence, Software, Knowledge Management
 layout: base.njk
 ---
 
 <link rel="stylesheet" href="/post.css"/>
+<script type="application/ld+json">
+  {% include 'post_metadata.njk' %}
+</script>
 <div class="section post">
   <div class="container is-max-desktop">
     <div class="column is-8 is-offset-2">
@@ -11,8 +15,8 @@ layout: base.njk
         <div class="post-header-overlay"></div>
       </div>
       <div class="post-header">
-        <h1 class="title post-title">{{ title }}</h1>
-        <h2 class="subtitle">{{ date | readableDate("yyyy.LL.dd")  }}</h3>
+        <h1 class="title post-title">{{ post_title }}</h1>
+        <h2 class="subtitle">{{ post_date | readableDate("yyyy.LL.dd")  }}</h3>
       </div>
 
       <div class="content post-content">

@@ -1,3 +1,8 @@
+---
+page_title: David Landry - A blog about Artificial Intelligence, Software, Knowledge Management
+page_description: "My small website where I store posts about various topics, including Artificial Intelligence, Software (mostly Python), and Knowledge Management."
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,10 +21,47 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="David Landry">
+    {% if post_summary %}
+      <meta name="description" content="{{ post_summary }} Read the full post David Landry's blog.">
+    {% elif page_description %}
+      <meta name="description" content="{{ page_description }}">
+    {% endif %}
+
+    {% if keywords %}
+      <meta name="keywords" content="
+  {%- for kw in keywords %}
+  {{- kw -}}{%- if not loop.last %},{% endif -%}
+  {% endfor -%}
+   ">
+    {% endif %}
+
     <link rel="stylesheet" href="/bulma.min.css">
     <link rel="stylesheet" href="/fonts.css">
     <link rel="stylesheet" href="/style.css">
-    <title>{{ title }}</title>
+
+    <title>
+      {% if post_title %}
+        {{ post_title }}
+      {% else %}
+        {{ page_title }}
+      {% endif %}
+    </title>
+    <script type="application/ld+json">
+      "author" : {
+        "@type": "Person",
+        "@id": "https://blog.dlandry.xyz/about/",
+        "name": "David Landry",
+        "url": "https://blog.dlandry.xyz/about/",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://blog.dlandry.xyz/images/selfie.jpg",
+          "url": "https://blog.dlandry.xyz/images/selfie.jpg",
+          "height": "402",
+          "width": "402"
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -46,6 +88,7 @@
         <a href="/">Home</a>
         <a href="/posts">Posts</a>
         <a href="/about">Contact</a>
+        <a href="/feed.xml">Atom Feed</a>
       </p>
     </footer>
   </body>

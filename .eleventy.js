@@ -1,7 +1,10 @@
 const { DateTime } = require('luxon')
-
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
+
+    eleventyConfig.addPlugin(pluginRss);
+
     // Filters
 
     eleventyConfig.addFilter('htmlDateString', (dateObj) => {
@@ -17,6 +20,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("limit", function (input_array, limit) {
         return input_array.slice(0, limit);
     });
+
 
     eleventyConfig.addPassthroughCopy({ "_static/": "/" });
 

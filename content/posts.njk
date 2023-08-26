@@ -4,30 +4,33 @@ eleventyImport:
 collections: ["post"]
 ---
 
-
 <section class="section">
   <div class="container is-max-desktop">
-      <div class="column is-8 is-offset-2"> 
-    <h1 class="title is-4">All posts</h1>
-    <table class="table post-table">
-      <colgroup>
-        <col style="width:20%">
-        <col style="width:80%">
-      </colgroup>  
-      {%- for post in collections.post | reverse -%}
-      <tbody>
-      <tr>
-        <td>
-          <p class="post-table-row-p"><time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time></p>
-        </td>
-        <td class="post-title-table">
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </td>
-      </tr>
-      {%- endfor -%}
-      </tbody>
-    </table>
-    <p><a href="/">Find out more</a></p>
+    <div class="column is-8 is-offset-2">
+      <h1 class="title is-4">All posts</h1>
+      <table class="table post-table">
+        <colgroup>
+          <col style="width:20%">
+          <col style="width:80%">
+        </colgroup>
+        {%- for post in collections.post | reverse -%}
+          <tbody>
+            <tr>
+              <td>
+                <p class="post-table-row-p">
+                  <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+                </p>
+              </td>
+              <td class="post-title-table">
+                <a href="{{ post.url }}">{{ post.data.post_title }}</a>
+              </td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+      <p>
+        <a href="/">Find out more</a>
+      </p>
+    </div>
   </div>
-</div>
 </section>

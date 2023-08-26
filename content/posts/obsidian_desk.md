@@ -1,11 +1,16 @@
 ---
-title: A Desk for Obsidian
-date: 2023-08-26
+post_title: A Desk for Obsidian
+post_date: 2023-08-26
 image: desk_crop.png
-tags:
+keywords:
   - Knowledge Management
   - Obsidian
   - UX
+post_summary: |
+  Desk is an extension for the Obsidian note-taking software. It improves on Obsidian's
+  default behavior by giving a more prominent place to the search results in the
+  visual hierarchy. Desk makes it easier to use backlinks and get a birds eye view
+  of your notes for a particular topic.
 ---
 
 <p class="post-topics">topics: Knowledge Management, Obsidian, UX</p>

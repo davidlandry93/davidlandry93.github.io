@@ -1,10 +1,16 @@
 ---
-title: Why Nushell is great
-date: 2023-08-14
+post_title: Why Nushell is great
+post_date: 2023-08-14
 image: nushell_crop.png
-tags:
+keywords:
   - Linux
   - Nushell
+  - Shell Interpreter
+post_summary: |
+  Nushell is a modern shell interpreter written in Rust. It makes the key realization
+  that the text data coming out of common shell commands is almost alwasy a table of 
+  a dictionary. Nushell exploits this fact to provide a consistent set of data 
+  manipulation tools.
 ---
 
 
