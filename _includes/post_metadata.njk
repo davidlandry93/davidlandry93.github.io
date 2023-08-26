@@ -8,10 +8,22 @@
   "datePublished": "{{ post_date | htmlDateString }}",
   "dateModified": "{{ date_modified | default(post_date) | htmlDateString }}",
   "url": "{{ page.url }}",
-  "author" : https://blog.dlandry.xyz/about/#Person,
+  "author" : {
+    "@type": "Person",
+    "@id": "https://blog.dlandry.xyz/about/#Person",
+    "name": "{{ metadata.author.name }}",
+    "url": "https://blog.dlandry.xyz/about/",
+    "image": {
+      "@type": "ImageObject",
+      "@id": "https://blog.dlandry.xyz/images/selfie.jpg",
+      "url": "https://blog.dlandry.xyz/images/selfie.jpg",
+      "height": "402",
+      "width": "402"
+    }
+  },
   "isPartOf":  {
     "@type": "Blog",
-    "@id": "https://blog.dlandry.xyz",
+    "@id": "{{ metadata.url }}"
   },
   "keywords": [
     {%for tag in keywords %}
