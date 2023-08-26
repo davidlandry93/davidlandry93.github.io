@@ -48,17 +48,23 @@ page_description: "My small website where I store posts about various topics, in
       {% endif %}
     </title>
     <script type="application/ld+json">
-      "author" : {
-        "@type": "Person",
-        "@id": "https://blog.dlandry.xyz/about/",
-        "name": "David Landry",
-        "url": "https://blog.dlandry.xyz/about/",
-        "image": {
-          "@type": "ImageObject",
-          "@id": "https://blog.dlandry.xyz/images/selfie.jpg",
-          "url": "https://blog.dlandry.xyz/images/selfie.jpg",
-          "height": "402",
-          "width": "402"
+      {
+        "@context": "schema.org",
+        "@type": "Blog",
+        "@id": "https://blog.dlandry.xyz",
+        "name": "David Landry's Blog",
+        "publisher": {
+          "@type": "Person",
+          "@id": "https://blog.dlandry.xyz/about/#Person",
+          "name": "David Landry",
+          "url": "https://blog.dlandry.xyz/about/",
+          "image": {
+            "@type": "ImageObject",
+            "@id": "https://blog.dlandry.xyz/images/selfie.jpg",
+            "url": "https://blog.dlandry.xyz/images/selfie.jpg",
+            "height": "402",
+            "width": "402"
+          }
         }
       }
     </script>

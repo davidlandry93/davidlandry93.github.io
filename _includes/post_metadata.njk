@@ -8,15 +8,10 @@
   "datePublished": "{{ post_date | htmlDateString }}",
   "dateModified": "{{ date_modified | default(post_date) | htmlDateString }}",
   "url": "{{ page.url }}",
+  "author" : https://blog.dlandry.xyz/about/#Person,
   "isPartOf":  {
     "@type": "Blog",
     "@id": "https://blog.dlandry.xyz",
-    "name": "David Landry's Blog",
-    "publisher": {
-      "@type": "Person",
-      "name": "David Landry",
-      "url": "https://blog.dlandry.xyz"
-    }
   },
   "keywords": [
     {%for tag in keywords %}
