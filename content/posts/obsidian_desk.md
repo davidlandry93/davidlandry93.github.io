@@ -8,7 +8,7 @@ tags:
   - UX
 ---
 
-topics: Knowledge Management, Obsidian, UX
+<p class="post-topics">topics: Knowledge Management, Obsidian, UX</p>
 
 I just published a plugin for [Obsidian](https://www.obsidian.md) called
 [Desk](https://github.com/davidlandry93/obsidian-desk). Here, I want to explain the
