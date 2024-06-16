@@ -12,6 +12,10 @@ a {
   text-decoration: underline;
 }
 
+div.hero-body {
+  padding: none;
+}
+
 .hero-body .title {
   font-family: InterTight;
 }
@@ -237,4 +241,18 @@ section.section {
 .publist li {
   margin-top: 1.4em;
   margin-bottom: 1.8em;
+}
+
+.homemenu a {
+  display: block;
+  height: 9em;
+  border-radius: 6px;
+  /* background-image: radial-gradient(circle 300px at 140% 130%, white, #a3cba3); */
+  text-decoration: none;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: 1px solid black;
+  background-color: white;
+  /* box-shadow: #CCCCCC 5px 5px 100px 4px; */
 }
