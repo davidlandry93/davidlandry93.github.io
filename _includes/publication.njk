@@ -1,0 +1,30 @@
+---
+page_title: David Landry - A blog about Artificial Intelligence, Software, Knowledge Management
+layout: base.njk
+---
+
+<link rel="stylesheet" href="/publication.css"/>
+<script type="application/ld+json">
+  {% include 'publication_metadata.njk' %}
+</script>
+<div class="section post">
+  <div class="container is-max-desktop">
+    <div class="column is-8 is-offset-2">
+
+      <div class="post-header">
+        <h1 class="title post-title">{{ title }}</h1>
+        <h2 class="subtitle">{{ date | readableDate("yyyy.LL.dd")  }}</h3>
+      </div>
+
+      <div class="post-abstract">
+        {{ abstract }}
+      </div>
+
+      <div class="content post-content">
+        {{ content | safe }}
+      </div>
+
+      <a href="/">Read more</a>
+    </div>
+  </div>
+</div>

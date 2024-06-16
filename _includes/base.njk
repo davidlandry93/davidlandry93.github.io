@@ -1,6 +1,7 @@
 ---
 page_title: David Landry - A blog about Artificial Intelligence, Software, Knowledge Management
 page_description: "My small website where I store posts about various topics, including Artificial Intelligence, Software (mostly Python), and Knowledge Management."
+navbar: true
 ---
 
 <!doctype html>
@@ -70,32 +71,39 @@ page_description: "My small website where I store posts about various topics, in
     </script>
   </head>
   <body>
-    <header>
-      <div class="container is-max-desktop">
-        <div class="column is-8 is-offset-2">
-          <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item first" href="{{ navigation.home }}">David Landry</a>
-              <a class="navbar-item smaller" href="/posts/">Posts</a>
-              <a class="navbar-item smaller" href="/about/">Contact</a>
-            </div>
-          </nav>
+    {% if navbar %}
+      <header>
+        <div class="container is-max-desktop">
+          <div class="column is-8 is-offset-2">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+              <div class="navbar-brand">
+                <a class="navbar-item first" href="{{ navigation.home }}">David Landry</a>
+                <a class="navbar-item smaller" href="/posts/">Blog</a>
+                <a class="navbar-item smaller" href="/research/">Research</a>
+                <a class="navbar-item smaller" href="/about/">Contact</a>
+                <a class="navbar-item smaller" href="{{ navigation.home }}">More</a>
+              </div>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    {% endif %}
     <main>
       {{ content | safe }}
     </main>
-    <footer class="footer has-text-centered">
-      <p>
+    <footer class="footer">
+
+      <div class="column is-8 is-offset-2">
+        <p>
         © David Landry, 2023. 
       </p>
-      <p>
-        <a href="/">Home</a>
-        <a href="/posts">Posts</a>
-        <a href="/about">Contact</a>
-        <a href="/feed.xml">Atom Feed</a>
-      </p>
+        <p>
+          <a href="/">Home</a>
+          <a href="/posts">Posts</a>
+          <a href="/about">Contact</a>
+          <a href="/feed.xml">Atom Feed</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>

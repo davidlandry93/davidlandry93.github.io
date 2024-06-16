@@ -1,48 +1,25 @@
 ---
 layout: base.njk
 eleventyImport:
-collections: ["post"]
+navbar: false
 ---
 
-<section class="hero is-medium">
-  <div class="container is-max-desktop pl-2 pr-2">
-    <div class="hero-body is-align-items-start ">
-      <p class="title">
-        Hello, I'm David
-      </p>
-      <p class="subtitle">
-        I'm a PhD candidate researching Artificial Intelligence at INRIA Paris.
-      </p>
-    </div>
-  </div>
-</section>
+<div class="container is-max-desktop mt-6">
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="column is-10 is-offset-1">
-      <h2 class="title is-4">Latest posts</h1>
-      <div class="columns is-multiline">
-        {%- for post in collections.post | limit(5) | reverse -%}
-          <div class="column is-4">
-            <div class="card post">
-              <div class="card-image">
-                <figure class="image is-3by2"><img src="/images/{{post.data.image}}"/>
-                </figure>
-              </div>
-              <div class="card-content">
-                <h2 class="title is-4">
-                  <a href="{{ post.url }}" class="post-title">{{ post.data.post_title }}</a>
-                </h2>
-                <time datetime="{{ post.data.post_date | htmlDateString }}">{{ post.data.post_date | readableDate("yyyy.LL.dd") }}</time>
-              </div>
-            </div>
-          </div>
-        {%- endfor -%}
-        <div class="column is-4 more-posts">
-          <a href="/posts/">All posts</a>
-        </div>
-      </div>
+  <div class="column is-8 is-offset-2">
+
+    <div class="section hello">
+      <p class="title">
+      Hello, I'm David. 
+      </p>
+      <p>
+      I'm a PhD candidate researching Artificial Intelligence at INRIA Paris.
+      </p>
     </div>
+
+    <a href="/posts/">Blog</a>
+    <a href="/research/">Research</a>
+    <a href="/photography/">Photography</a>
+    <a href="/about/">Contact</a>
   </div>
 </div>
-</section>

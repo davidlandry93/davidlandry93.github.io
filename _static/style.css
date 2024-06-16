@@ -161,17 +161,13 @@ a.navbar-item:hover {
   text-decoration: none;
 }
 
-.title {
-  border-bottom: 1px solid black;
-}
 
 .title.is-4 {
   border-bottom: none;
 }
 
-footer {
-  text-align: center;
-  padding: 3px;
+footer.footer {
+  padding: 0;
 }
 
 .table {
@@ -201,4 +197,44 @@ footer {
 
 .post-title-table a {
   font-weight: bold;
+}
+
+section.section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section.hello {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+
+
+.grid-menu .cell a {
+  display: block;
+  height: 6em;
+  width: 8em;
+  /* border: 1px solid black; */
+  margin: 0.2em;
+  background-color: black;
+  border-radius: 0.5em;
+  color: white;
+  padding: 0.2em;
+  width: 100%;
+}
+
+.grid-menu a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+
+.grid-menu .filler {
+  background-color: black;
+}
+
+.publist li {
+  margin-top: 1.4em;
+  margin-bottom: 1.8em;
 }
