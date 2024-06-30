@@ -2,6 +2,7 @@
 page_title: David Landry - A blog about Artificial Intelligence, Software, Knowledge Management
 page_description: "My small website where I store posts about various topics, including Artificial Intelligence, Software (mostly Python), and Knowledge Management."
 navbar: true
+footer: true
 ---
 
 <!doctype html>
@@ -73,35 +74,73 @@ navbar: true
   <body>
     {% if navbar %}
       <header>
-        <div class="container is-max-desktop">
-          <div class="column is-8 is-offset-2">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-              <div class="navbar-brand">
-                <a class="navbar-item first" href="{{ navigation.home }}">David Landry</a>
-                <a class="navbar-item smaller" href="/posts/">Blog</a>
-                <a class="navbar-item smaller" href="/research/">Research</a>
-                <a class="navbar-item smaller" href="/about/">Contact</a>
-                <a class="navbar-item smaller" href="{{ navigation.home }}">More</a>
-              </div>
-            </nav>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="container is-max-desktop">
+            <div class="navbar-brand">
+              <a class="navbar-item first" href="{{ navigation.home }}">DL.</a>
+              <a class="navbar-item smaller" href="/posts/">Blog</a>
+              <a class="navbar-item smaller" href="/research/">Research</a>
+              <a class="navbar-item smaller" href="/about/">Contact</a>
+            </div>
           </div>
-        </div>
+        </nav>
       </header>
     {% endif %}
     {{ content | safe }}
-    <footer class="footer">
+    {% if footer %}
+      <footer class="footer">
+        <div class="container is-max-desktop">
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <h3>Navigation</h3>
+              <ul>
+                <li>
+                  <a href="/posts">Blog</a>
+                </li>
+                <li>
+                  <a href="/research">Research</a>
+                </li>
+                <li>
+                  <a href="/photography">Photography</a>
+                </li>
+                <li>
+                  <a href="/about">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="column is-one-quarter">
+              <h3>External Links</h3>
 
-      <div class="column is-8 is-offset-2">
-        <p>
-        © David Landry, 2023. 
-      </p>
-        <p>
-          <a href="/">Home</a>
-          <a href="/posts">Posts</a>
-          <a href="/about">Contact</a>
-          <a href="/feed.xml">Atom Feed</a>
-        </p>
-      </div>
-    </footer>
-  </body>
-</html>
+              <ul>
+                <li>
+                  <a href="">ORCID</a>
+                </li>
+                <li>
+                  <a href="">Semantic Scholar</a>
+                </li>
+                <li>
+                  <a href="">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="">Github</a>
+                </li>
+                <li>
+                  <a href="">X</a>
+                </li>
+              </ul>
+            </div>
+            <div class="column is-one-quarter">
+              <h3>
+              Get in touch
+            </h3>
+              <p>
+              Through LinkedIn, X or via <a href='mailto:david.landry@inria.fr'>david.landry@inria.fr</a>.
+            </p>
+            </div>
+          </div>
+          <p>© David Landry, 2023-2024.</p>
+        </div>
+      </footer>
+      {%endif%}
+    </body>
+  </html>

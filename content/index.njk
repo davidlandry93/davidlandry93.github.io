@@ -1,31 +1,113 @@
 ---
 layout: base.njk
 eleventyImport:
-navbar: false
+navbar: true
+footer: true
+collections: ["posts"]
 ---
 
-<section class="hero section is-medium">
+<section class="hero">
   <div class="container is-max-desktop">
-  <div class="column is-8 is-offset-2">
-  <div class="hero-body">
-  <p class="title">
-  Hello, I'm David. 
-  </p>
-  <p class="subtitle">
-  I'm a PhD candidate researching Artificial Intelligence at INRIA Paris.
-  </p>
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column is-two-thirds">
+          <h1 class="title">Hi, I'm David.</h1>
+          <p>I’m a PhD candidate at INRIA Paris. I study the intersection of Artificial Intelligence and atmospheric sciences.</p>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
+</section>
+
+<section class="section menu-cards">
+  <div class="container is-max-desktop">
+    <h2>Contents</h2>
+    <div class="home-menu-grid">
+      <div>
+        <a href="/posts">
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~ <span class="menu-card-headline">BLOG</span> ~~
+          ~~~~~~~~~~~~~~~~~~~~
+          ~~~~~~~~~~~~~~~~~~~~
+        </a>
+      </div>
+      <div>
+          <a href="/posts">
+          ....................
+          ....................
+          ....................
+          ....................
+          ....................
+          ....................
+          ....................
+          ........ <span class="menu-card-headline">RESEARCH</span> ..
+          ....................
+          ....................
+          </a>
+      </div>
+      <div>
+        <a href="/photography">
+          --------------------
+          --------------------
+          --------------------
+          --------------------
+          --------------------
+          --------------------
+          --------------------
+          ----- <span class="menu-card-headline">PHOTOGRAPHY</span> --
+          --------------------
+          --------------------
+        </a>
+      </div>
+      <div>
+        <a href="/posts">
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@ <span class="menu-card-headline">CONTACT</span> @@
+          @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container is-max-desktop">
-  <div class="column is-8 is-offset-2">
-    <a href="/posts/" class="cell">Blog</a>
-    <a href="/research/" class="cell">Research</a>
-    <a href="/photography/" class="cell">Photography</a>
-    <a href="/about/" class="cell">Contact</a> 
-  </div>
+    <h2>Latest posts</h2>
+    <div class="fixed-grid has-2-cols has-1-cols-mobile">
+      <div class="grid">
+      {%- for post in collections.post | reverse -%}
+        <div class="cell">
+          <div class="post-card">
+            <div class="post-card-image">
+              <figure class="image post-thumbnail" style="background-image:url('/images/{{post.data.image}}');">
+              </figure>
+            </div>
+            <div class="contents">
+                <h3 class="post-h3"><a href="{{ post.url }}">{{ post.data.post_title }}</a></h3>
+                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+        <div class="cell">
+          <div class="post-card more">
+            <a href="/posts/">More posts</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

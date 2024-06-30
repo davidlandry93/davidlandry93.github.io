@@ -2,71 +2,74 @@
 layout: base.njk
 ---
 
-<div class="container is-max-desktop">
-  <div class="column is-8 is-offset-2">
-    <section class="section">
-      <h1 class="title is-3">Research</h1>
-      <p>My research revolves around the applications of Artificial Intelligence to the earth sciences. 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h1 class="title is-3">Research</h1>
+    <p>My research revolves around the applications of Artificial Intelligence to the earth sciences. 
       I'm especially interested in the downstream applications of weather forecasting: how to make optimal decisions 
       related to the weather, given that our predictions are uncertain?</p>
-    </section>
-    <section class="section">
-      <h2 class="title is-4">Selected publications</h2>
-      <div>
-        <ul class="publist">
-          {%- for post in collections.publication | reverse -%}
-            {%- if post.data.pinned -%}
-              <li>
-                {{post.data.authors}} (<time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy") }}</time>).
-              <b>
-                  {%- if post.data.url-%}
-                  <a href="{{ post.url }}">{{ post.data.title }}</a>
-                  {%-elif post.data.doi -%}
-                  <a href="https://doi.org/{{ post.data.doi }}">{{ post.data.title }}</a>
-                  {%-else-%}
-                  {{ post.data.title }}
-                  {%-endif-%}
-                </b>.
-            <i>{{post.data.venue}}</i>. 
-            {%- if post.data.doi -%}[<a href="https://doi.org/{{post.data.doi}}">DOI</a>]{%-endif-%}
-            {%- if post.data.arxiv -%}[<a href="https://arxiv.org/abs/{{post.data.arxiv}}">arXiv</a>]{%-endif-%}
-            {%- if post.data.pdf -%}[<a href="/pdf/{{post.data.pdf}}">PDF</a>]{%-endif-%}
-            {%- if post.data.url -%}[<a href="{{post.data.url}}">URL</a>]{%-endif-%}
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        </div>
-      </section>
-      <section class="section">
-        <table>
-          <h2 class="title is-4">Other works</h2>
-          <ul class="publist">
-            {%- for post in collections.publication | reverse -%}
-              {%- if not post.data.pinned -%}
-                <li>
-                  {{post.data.authors}} (<time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy") }}</time>).
-                  <b>                  {%- if post.data.url-%}
-                  <a href="{{ post.url }}">{{ post.data.title }}</a>
-                  {%-elif post.data.doi -%}
-                  <a href="https://doi.org/{{ post.data.doi }}">{{ post.data.title }}</a>
-                  {%-else-%}
-                  {{ post.data.title }}
-                  {%-endif-%}</b>.
-            <i>{{post.data.venue}}</i>. 
-            {%- if post.data.doi -%}[<a href="https://doi.org/{{post.data.doi}}">DOI</a>]{%-endif-%}
-            {%- if post.data.arxiv -%}[<a href="https://arxiv.org/abs/{{post.data.arxiv}}">arXiv</a>]{%-endif-%}
-            {%- if post.data.pdf -%}[<a href="/pdf/{{post.data.pdf}}">PDF</a>]{%-endif-%}
-            {%- if post.data.url -%}[<a href="{{post.data.url}}">URL</a>]{%-endif-%}
-                  </li>
-                {%- endif -%}
-              {%- endfor -%}
-            </ul>
-          </tbody>
-        </table>
-      </section>
-      <p>
-        <a href="#">Back to the top</a>
-      </p>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Selected publications</h2>
+    <div class="publication-grid">
+      {%- for pub in collections.publication | reverse -%}
+        {%- if pub.data.pinned -%}
+          <div class="publication-grid-item">
+            <div class="publication-card">
+              <div class="publication-card-main">
+                <h3>{{pub.data.title}}</h3>
+                <p>{{pub.data.authors}}</p>
+              </div>
+              <div class="publication-card-bottom">
+                <div class="left-links">
+                  {%- if pub.data.doi -%}[<a href="https://doi.org/{{post.data.doi}}">DOI</a>]{%-endif-%}
+                  {%- if pub.data.arxiv -%}[<a href="https://arxiv.org/abs/{{post.data.arxiv}}">arXiv</a>]{%-endif-%}
+                  {%- if pub.data.pdf -%}[<a href="/pdf/{{post.data.pdf}}">PDF</a>]{%-endif-%}
+                  {%- if pub.data.url -%}[<a href="{{post.data.url}}">URL</a>]{%-endif-%}
+                </div>
+                <div>
+                  <time datetime="{{ pub.date | htmlDateString }}">{{ pub.date | readableDate("yyyy.MM.dd") }}</time>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
     </div>
   </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+  <h2 class="title is-4">Other works</h2>
+  <div class="publication-grid">
+      {%- for pub in collections.publication | reverse -%}
+        {%- if not pub.data.pinned -%}
+          <div class="publication-grid-item">
+            <div class="publication-card">
+              <div class="publication-card-main">
+                <h3>{{pub.data.title}}</h3>
+                <p>{{pub.data.authors}}</p>
+              </div>
+              <div class="publication-card-bottom">
+                <div class="left-links">
+                  {%- if pub.data.doi -%}[<a href="https://doi.org/{{post.data.doi}}">DOI</a>]{%-endif-%}
+                  {%- if pub.data.arxiv -%}[<a href="https://arxiv.org/abs/{{post.data.arxiv}}">arXiv</a>]{%-endif-%}
+                  {%- if pub.data.pdf -%}[<a href="/pdf/{{post.data.pdf}}">PDF</a>]{%-endif-%}
+                  {%- if pub.data.url -%}[<a href="{{post.data.url}}">URL</a>]{%-endif-%}
+                </div>
+                <div>
+                  <time datetime="{{ pub.date | htmlDateString }}">{{ pub.date | readableDate("yyyy.MM.dd") }}</time>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+  </div>                  
+  <p>
+    <a href="#">Back to the top</a>
+  </p>
+</div>
+</section>

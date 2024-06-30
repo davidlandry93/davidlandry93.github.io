@@ -1,258 +1,198 @@
 @import "fonts.css";
+@import "research.css";
 
-html,
-body {
-  background-color: #FAFAFA;
-  font-family: Inter, sans-serif;
-  color: black;
-}
-
-a {
-  color: black;
-  text-decoration: underline;
-}
-
-div.hero-body {
-  padding: none;
-}
-
-.hero-body .title {
-  font-family: InterTight;
-}
-
-.hero-body .subtitle {
-  color: #666;
-}
-
-.title,
-.subtitle {
-  font-family: InterTight;
+:root {
+  --bulma-scheme-main: #FAFAFA;
+  --ruler-red: #ED7F7F;
+  --base-font: 'Lexend', 'Arial', sans-serif;
+  --typewriter-font: 'Courier Primer', 'Courier New', sans-serif;
+  --bulma-hero-body-padding-medium: 1em;
 }
 
 .title {
+  --bulma-title-color: black;
+}
+
+html,
+body {
+  background-color: white;
+  font-family: Lexend, sans-serif;
   color: black;
+  font-size: 14pt;
 }
 
-h1 .title {
-  font-family: InterTight;
-}
-
-h3 .subtitle {
-  font-weight: bold;
-}
-
-.navbar {
-  font-weight: bold;
-  /* box-shadow: 0px -15px 20px black; */
-  background-color: #FAFAFA;
-}
-
-.navbar-item {
-  align-items: end;
-}
-
-
-.navbar-brand a {
-  font-family: InterTight;
-  font-size: 1.5rem;
+a {
+  color: blue;
   text-decoration: none;
 }
 
-.navbar-brand a.navbar-item.smaller {
-  font-size: 1.0rem;
-  align-items: end;
-  border-bottom: 0;
+h2 {
+  font-family: 'Courier Primer', 'Courier New', sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: 'Courier Prime', 'Courier New', sans-serif;
+  font-weight: bold;
+}
+
+a:hover {
   text-decoration: underline;
 }
 
-
-.card-container {
-  display: flex;
+.section {
+  background-color: #FAFAFA;
 }
 
-.post {
-  min-height: 250px;
+.navbar {
+  font-family: 'Courier Prime', 'Courier New', sans-serif;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--ruler-red);
 }
 
-
-
-a:hover {
-  color: #666;
-  border-bottom-color: #666;
+.hero {
+  background-color: #FAFAFA;
 }
 
-
-
-.selfie-container {
-  margin: auto;
-  width: 256px;
+.menu-cards {
+  font-family: var(--typewriter-font);
+  overflow: hidden;
 }
 
-.tags .tag {
-  /* background-color: #c8b9f0; */
-  border: 1px solid black;
-}
-
-div .tags {
-  position: absolute;
-  bottom: 0;
-}
-
-.more-posts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 250px;
-}
-
-div .card-content {
-  min-height: 150px;
-}
-
-.card-content time {
-  color: #666;
-  font-weight: 500;
-}
-
-.post-image {
-  height: auto;
-  float: left;
-  margin: 6px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-.post .subtitle {
-  font-weight: bold;
-}
-
-
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5 {
-  font-family: InterTight;
+.menu-cards a {
   color: black;
-}
-
-.content h1 {
-  font-size: 1.7rem;
+  display: block;
+  width: 225px;
+  height: 150px;
+  background-color: white;
+  line-height: 0.8em;
+  box-shadow: 0px 3px 5px 0px #00000033;
+  transition: box-shadow 0.3s ease;
+  /* Add transition for smooth animation */
   font-weight: bold;
 }
 
-.content h2 {
-  font-size: 1.3rem;
-  color: #666;
-  font-weight: bold;
+.menu-cards a:hover {
+  text-decoration: none;
+  box-shadow: 0px 3px 5px 0px #00000088;
 }
 
-.content h3 {
-  font-size: 1.1rem;
-  color: black;
-  font-weight: bold;
+.menu-card-headline {
+  color: #fb6666ff;
+}
+
+.home-menu-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, 225px);
+  grid-auto-rows: 150px;
+  gap: 1em;
+  width: 100%;
+}
+
+div.hero-body {
+  padding-left: 0;
+}
+
+section.hero {
+  padding-left: 1.5rem;
+}
+
+.contents-section {
+  background-color: #FAFAFA;
+  box-shadow: 0px 5px 7px 0px #00000033;
+  margin-bottom: 10px;
+  padding-top: 1em;
+  /* border-bottom: 2px solid var(--ruler-red); */
 }
 
 .navbar-item {
   color: black;
 }
 
-a.navbar-item:hover {
-  color: #666;
-}
-
-.navbar-brand a.navbar-item {
-  text-decoration: none;
-}
-
-
-.title.is-4 {
-  border-bottom: none;
-}
-
-footer.footer {
-  padding: 0;
-}
-
-.table {
-  background-color: transparent;
-}
-
-.image img {
-  object-fit: cover;
-  object-position: top;
-}
-
-.card-content .title {
-  margin-bottom: 0;
-}
-
 .navbar-item.first {
-  padding-left: 0;
-}
-
-.post-table td {
-  padding-left: 0;
-}
-
-.post-title-table {
-  padding-right: 0;
-}
-
-.post-title-table a {
+  margin-left: var(--bulma-section-padding);
+  border-right: 3px double var(--ruler-red);
   font-weight: bold;
 }
 
-section.section {
-  padding-left: 0;
-  padding-right: 0;
+
+.table-of-contents {
+  font-size: 1.2rem;
+  font-family: 'Courier Primer', 'Courier New';
 }
 
-.section.hello {
-  padding-left: 0.2em;
-  padding-right: 0.2em;
+.table-of-contents a {
+  text-transform: uppercase;
 }
 
-
-.grid-menu .cell a {
-  display: block;
-  height: 6em;
-  width: 8em;
-  /* border: 1px solid black; */
-  margin: 0.2em;
-  background-color: black;
-  border-radius: 0.5em;
-  color: white;
-  padding: 0.2em;
-  width: 100%;
+.grid {
+  --bulma-grid-gap: 1.5em;
 }
 
-.grid-menu a {
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
-
-
-.grid-menu .filler {
-  background-color: black;
-}
-
-.publist li {
-  margin-top: 1.4em;
-  margin-bottom: 1.8em;
-}
-
-.homemenu a {
-  display: block;
-  height: 9em;
-  border-radius: 6px;
-  /* background-image: radial-gradient(circle 300px at 140% 130%, white, #a3cba3); */
-  text-decoration: none;
-  padding: 1em;
-  font-weight: bold;
-  font-size: 1.2em;
-  border: 1px solid black;
+.post-card {
   background-color: white;
-  /* box-shadow: #CCCCCC 5px 5px 100px 4px; */
+  display: flex;
+  height: 192px;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.279);
+  /* Add drop shadow at the bottom */
+
+  max-width: 25em;
+}
+
+.post-card.more {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-card.more a {
+  font-family: var(--typewriter-font);
+}
+
+
+.post-card h3 {
+  font-family: 'Lexend', sans-serif;
+  font-size: 12pt;
+}
+
+.post-card time {
+  font-size: 12pt;
+  font-family: var(--typewriter-font);
+}
+
+.post-card h3 a {
+  color: black;
+}
+
+.post-card .contents {
+  padding: 1em;
+}
+
+.post-thumbnail {
+  background-position: center;
+  background-size: cover;
+  width: 192px;
+  height: 192px;
+}
+
+.home h1 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+
+.home a {
+  margin-right: 1em;
+}
+
+.footer {
+  font-size: 0.8em;
+  background-color: white;
+}
+
+navbar {
+  background-color: #FAFAFA;
 }
