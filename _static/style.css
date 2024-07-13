@@ -1,198 +1,269 @@
 @import "fonts.css";
 @import "research.css";
+@import "index.css";
 
 :root {
-  --bulma-scheme-main: #FAFAFA;
-  --ruler-red: #ED7F7F;
-  --base-font: 'Lexend', 'Arial', sans-serif;
-  --typewriter-font: 'Courier Primer', 'Courier New', sans-serif;
-  --bulma-hero-body-padding-medium: 1em;
+    --bulma-scheme-main: #fafafa;
+    --ruler-red: #ed7f7f;
+    --base-font: "Lexend", "Arial", sans-serif;
+    --typewriter-font: "Courier Primer", "Courier New", sans-serif;
+    --bulma-hero-body-padding-medium: 1em;
 }
 
 .title {
-  --bulma-title-color: black;
+    --bulma-title-color: black;
 }
 
 html,
 body {
-  background-color: white;
-  font-family: Lexend, sans-serif;
-  color: black;
-  font-size: 14pt;
+    background-color: white;
+    font-family: Lexend, sans-serif;
+    color: black;
+    font-size: 14pt;
 }
 
 a {
-  color: blue;
-  text-decoration: none;
+    color: #d05555;
 }
 
 h2 {
-  font-family: 'Courier Primer', 'Courier New', sans-serif;
-  font-weight: bold;
+    font-family: var(--typewriter-font);
+    size: 16em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
 }
 
 h3 {
-  font-family: 'Courier Prime', 'Courier New', sans-serif;
-  font-weight: bold;
+    font-family: "Courier Prime", "Courier New", sans-serif;
+    font-weight: bold;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .section {
-  background-color: #FAFAFA;
+    background-color: #fafafa;
 }
 
 .navbar {
-  font-family: 'Courier Prime', 'Courier New', sans-serif;
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--ruler-red);
+    font-family: "Courier Prime", "Courier New", sans-serif;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ruler-red);
 }
 
 .hero {
-  background-color: #FAFAFA;
+    background-color: #fafafa;
 }
 
 .menu-cards {
-  font-family: var(--typewriter-font);
-  overflow: hidden;
+    font-family: var(--typewriter-font);
+    overflow: hidden;
 }
 
 .menu-cards a {
-  color: black;
-  display: block;
-  width: 225px;
-  height: 150px;
-  background-color: white;
-  line-height: 0.8em;
-  box-shadow: 0px 3px 5px 0px #00000033;
-  transition: box-shadow 0.3s ease;
-  /* Add transition for smooth animation */
-  font-weight: bold;
+    color: black;
+    display: block;
+    width: 225px;
+    height: 150px;
+    background-color: white;
+    line-height: 0.8em;
+    box-shadow: 0px 3px 5px 0px #00000033;
+    transition: box-shadow 0.3s ease;
+    /* Add transition for smooth animation */
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .menu-cards a:hover {
-  text-decoration: none;
-  box-shadow: 0px 3px 5px 0px #00000088;
+    text-decoration: none;
+    box-shadow: 0px 3px 5px 0px #00000088;
 }
 
 .menu-card-headline {
-  color: #fb6666ff;
+    color: #fb6666ff;
 }
 
 .home-menu-grid {
-  display: inline-grid;
-  grid-template-columns: repeat(auto-fit, 225px);
-  grid-auto-rows: 150px;
-  gap: 1em;
-  width: 100%;
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, 225px);
+    grid-auto-rows: 150px;
+    gap: 1em;
+    width: 100%;
 }
 
 div.hero-body {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 section.hero {
-  padding-left: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .contents-section {
-  background-color: #FAFAFA;
-  box-shadow: 0px 5px 7px 0px #00000033;
-  margin-bottom: 10px;
-  padding-top: 1em;
-  /* border-bottom: 2px solid var(--ruler-red); */
+    background-color: #fafafa;
+    box-shadow: 0px 5px 7px 0px #00000033;
+    margin-bottom: 10px;
+    padding-top: 1em;
+    /* border-bottom: 2px solid var(--ruler-red); */
 }
 
 .navbar-item {
-  color: black;
+    color: black;
 }
 
 .navbar-item.first {
-  margin-left: var(--bulma-section-padding);
-  border-right: 3px double var(--ruler-red);
-  font-weight: bold;
+    margin-left: var(--bulma-section-padding);
+    border-right: 3px double var(--ruler-red);
+    font-weight: bold;
 }
 
-
 .table-of-contents {
-  font-size: 1.2rem;
-  font-family: 'Courier Primer', 'Courier New';
+    font-size: 1.2rem;
+    font-family: "Courier Primer", "Courier New";
 }
 
 .table-of-contents a {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .grid {
-  --bulma-grid-gap: 1.5em;
+    --bulma-grid-gap: 1.5em;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    .post-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .post-card {
-  background-color: white;
-  display: flex;
-  height: 192px;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.279);
-  /* Add drop shadow at the bottom */
+    display: block;
+    position: relative;
+    flex-direction: column;
+    /* height: 192px; */
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.279);
+    /* Add drop shadow at the bottom */
 
-  max-width: 25em;
+    transition: box-shadow 0.3s ease;
+    max-height: 16em;
+    height: 35vh;
+    color: black;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.post-card .content {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 1em;
+
+    background-color: rgba(0, 0, 0, 0.279);
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+.post-card:hover .content {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.post-card a {
+    color: white;
+}
+
+.post-card .textual-content {
+    max-width: 70%;
+    width: 40em;
+    color: white;
+}
+
+.post-card .contents-bottom {
+    width: 100%;
+    text-align: right;
+}
+
+.post-card-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.post-card:hover {
+    text-decoration: none;
+    box-shadow: 0px 8px 6px -6px #00000088;
+    color: #000000aa;
 }
 
 .post-card.more {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .post-card.more a {
-  font-family: var(--typewriter-font);
+    font-family: var(--typewriter-font);
 }
 
-
-.post-card h3 {
-  font-family: 'Lexend', sans-serif;
-  font-size: 12pt;
+.post-card .textual-content h3 {
+    color: white;
+    font-family: "Lexend", sans-serif;
+    font-size: 1.2em;
 }
 
 .post-card time {
-  font-size: 12pt;
-  font-family: var(--typewriter-font);
-}
-
-.post-card h3 a {
-  color: black;
+    font-family: var(--typewriter-font);
+    color: white;
+    font-weight: bold;
 }
 
 .post-card .contents {
-  padding: 1em;
+    padding: 1em;
 }
 
-.post-thumbnail {
-  background-position: center;
-  background-size: cover;
-  width: 192px;
-  height: 192px;
+.contents-top {
+    flex-grow: 1;
+}
+
+.contents-bottom {
+    text-align: right;
 }
 
 .home h1 {
-  margin-top: 2em;
-  margin-bottom: 1em;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
-
-
 .home a {
-  margin-right: 1em;
+    margin-right: 1em;
 }
 
 .footer {
-  font-size: 0.8em;
-  background-color: white;
+    font-size: 0.8em;
+    background-color: white;
 }
 
 navbar {
-  background-color: #FAFAFA;
+    background-color: #fafafa;
+}
+
+.post-card .more {
+    font-family: var(--typewriter-font);
 }

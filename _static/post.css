@@ -1,38 +1,135 @@
-.post-title {
-  border-bottom: 1px solid black;
-  font-family: InterTight;
-  font-weight: 800;
+.heading-graphic-container {
+    position: relative;
+    height: 90vh;
+}
+
+.heading-graphic-content {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.heading-graphic-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.279);
+}
+
+.navbar {
+    border-color: white;
+    background: none;
+    color: white;
+}
+
+.navbar-item {
+    color: white;
+}
+
+.navbar-item.first {
+    border-color: white;
+}
+
+.title-card-container {
+    display: flex;
+    align-items: flex-end;
+    height: calc(100% - var(--bulma-navbar-height));
+}
+
+.title-card {
+    height: 12em;
+    background-color: var(--bulma-scheme-main);
+    margin-bottom: 1em;
+    width: 30vw;
+    min-width: 300px;
+
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.279);
+}
+
+.title-card-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    margin-top: 3em;
+    padding: 0.5em 0.5em 0.3em 0.5em;
+
+    border-left: 4px double var(--ruler-red);
+}
+
+.title-card-top {
+    flex-grow: 1;
+}
+
+.title-card h1 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.title-card-bottom {
+    display: flex;
+
+    font-family: var(--typewriter-font);
+}
+
+.title-card-bottom-left {
+    flex-grow: 1;
+}
+
+.section.post {
+    padding-top: 1em;
 }
 
 .post-content {
-  text-align: justify;
-  font-family: Roboto, Inter, sans-serif;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+    text-align: left;
+    font-family: Lexend, Arial, sans-serif;
+    line-height: 1.4;
+    /* letter-spacing: -0.01em; */
+    font-size: 1.1em;
+}
+
+.post-content {
+    h2,
+    h3,
+    h4 {
+        font-family: lexend, arial, sans-serif;
+    }
 }
 
 .post-header {
-  padding-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 .content p.post-topics {
-  color: #666;
-  margin-bottom: 2rem;
-  margin-top: 0.5rem;
-  font-style: italic;
+    color: #666;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    font-style: italic;
 }
 
 .post-header .subtitle {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .post-header-bg {
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 2rem;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
 }
 
 .post-header-overlay {
-  min-height: 14rem;
-  /* background-image: linear-gradient(rgba(250, 250, 250, 0.2), rgba(250, 250, 250, 1.0) 95%); */
+    min-height: 14rem;
+    /* background-image: linear-gradient(rgba(250, 250, 250, 0.2), rgba(250, 250, 250, 1.0) 95%); */
+}
+
+.read-more {
+    padding-top: 5em;
 }

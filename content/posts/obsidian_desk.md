@@ -15,9 +15,9 @@ post_summary: |
 
 <p class="post-topics">topics: Knowledge Management, Obsidian, UX</p>
 
-I just published a plugin for [Obsidian](https://www.obsidian.md) called
+**I just published a plugin for [Obsidian](https://www.obsidian.md) called
 [Desk](https://github.com/davidlandry93/obsidian-desk). Here, I want to explain the
-rationale behind it, and why I think it's a useful addition to almost any vault.
+rationale behind it, and why I think it's a useful addition to almost any vault.**
 
 In the space of Personal Knowledge Management (PKM), Obsidian is my tool of choice. It's
 a note-making software that supports all the current best practices in PKM, like
@@ -28,7 +28,7 @@ So, what is it that I wanted to change about Obsidian? It has to do with the way
 information is presented. More specifically, the search results in Obsidian are always
 presented in a small and secondary manner (in terms of [visual
 hierarchy](https://en.wikipedia.org/wiki/Visual_hierarchy)). I feel like search should
-have a very prominent place in a note-making software. 
+have a very prominent place in a note-making software.
 
 I use two ways to search for information in Obsidian: the search dialog, and backlinks.
 The search dialog is self-explanatory. Backlinks are like a keyword search. If I go to
@@ -57,5 +57,4 @@ Obsidian. I hope it brings you joy too!
 The extension is currently under review, and should be available soon in the Community
 Plugins section of Obsidian. You can also
 [download](https://github.com/davidlandry93/obsidian-desk/releases) it directly from my
-repo and give it a go now. 
-
+repo and give it a go now.

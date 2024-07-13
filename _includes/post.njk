@@ -1,29 +1,65 @@
 ---
 page_title: David Landry - A blog about Artificial Intelligence, Software, Knowledge Management
 layout: base.njk
+navbar: false
 ---
 
 <link rel="stylesheet" href="/post.css"/>
 <script type="application/ld+json">
   {% include 'post_metadata.njk' %}
 </script>
+
+<div class="heading-graphic-container">
+    <div class="heading-graphic-background"  style="background-image: url('/images/{{ image }}')">
+    </div>
+    <div class="heading-graphic-content">
+        <header>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="container is-max-desktop">
+                    <div class="navbar-brand">
+                        <a class="navbar-item first" href="{{ navigation.home }}">DL.</a>
+                        <a class="navbar-item smaller" href="/posts/">Blog</a>
+                        <a class="navbar-item smaller" href="/research/">Research</a>
+                        <a class="navbar-item smaller" href="/about/">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container is-max-desktop title-card-container">
+            <div class="column is-8 is-offset-2">
+                <div class="title-card">
+                    <div class="title-card-inner">
+                        <div class="title-card-top">
+                            <h1>{{post_title}}</h1>
+                        </div>
+                        <div class="title-card-bottom">
+                            <div class="title-card-bottom-left">
+                                David Landry
+                            </div>
+                            <div class="title-card-bottom-right">
+                                {{ post_date | readableDate("yyyy.LL.dd")  }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="section post">
   <div class="container is-max-desktop">
     <div class="column is-8 is-offset-2">
-
-      <div class="post-header-bg" style="background-image: url('/images/{{ image }}')">
-        <div class="post-header-overlay"></div>
-      </div>
-      <div class="post-header">
-        <h1 class="title post-title">{{ post_title }}</h1>
-        <h2 class="subtitle">{{ post_date | readableDate("yyyy.LL.dd")  }}</h3>
-      </div>
 
       <div class="content post-content">
         {{ content | safe }}
       </div>
 
-      <a href="/">Read more</a>
+    <p class='read-more'>
+      <a href="/" >Read more</a>
+    </p>
     </div>
   </div>
 </div>

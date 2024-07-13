@@ -38,7 +38,7 @@ collections: ["posts"]
         </a>
       </div>
       <div>
-          <a href="/posts">
+          <a href="/research">
           ....................
           ....................
           ....................
@@ -83,31 +83,25 @@ collections: ["posts"]
   </div>
 </section>
 
+
 <section class="section">
   <div class="container is-max-desktop">
     <h2>Latest posts</h2>
-    <div class="fixed-grid has-2-cols has-1-cols-mobile">
-      <div class="grid">
-      {%- for post in collections.post | reverse -%}
-        <div class="cell">
-          <div class="post-card">
-            <div class="post-card-image">
-              <figure class="image post-thumbnail" style="background-image:url('/images/{{post.data.image}}');">
-              </figure>
+        <div class="post-grid">
+        {%- for post in collections.post | reverse -%}
+            <a class="post-card" href="{{post.url}}">
+            <div class="post-card-background" style="background-image:url('/images/{{post.data.image}}');">
             </div>
-            <div class="contents">
-                <h3 class="post-h3"><a href="{{ post.url }}">{{ post.data.post_title }}</a></h3>
+            <div class="content">
+                <div class="textual-content">
+                <h3>{{ post.data.post_title }}</h3>
                 <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
-            </div>
-          </div>
+                </div>
+            </div >
+            </a>
+        {%- endfor -%}
         </div>
-      {%- endfor -%}
-        <div class="cell">
-          <div class="post-card more">
-            <a href="/posts/">More posts</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <a href="/posts/">View more</a>
   </div>
+
 </section>
