@@ -77,16 +77,18 @@ footer: true
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="container is-max-desktop">
             <div class="navbar-brand">
-              <a class="navbar-item first" href="{{ navigation.home }}">DL.</a>
-              <a class="navbar-item smaller" href="/posts/">Blog</a>
-              <a class="navbar-item smaller" href="/research/">Research</a>
-              <a class="navbar-item smaller" href="/about/">Contact</a>
+              <div class="navbar-item first"><a class="to-filter" href="{{ navigation.home }}">DL.</a></div>
+              <div class="navbar-item smaller"><a class="to-filter" href="/posts/">Blog</a></div>
+             <div class="navbar-item smaller"><a class="to-filter" href="/research/">Research</a></div>
+              <div class="navbar-item smaller"><a class="to-filter" href="/about/">Contact</a></div>
             </div>
           </div>
         </nav>
       </header>
     {% endif %}
+    <main>
     {{ content | safe }}
+    </main>
     {% if footer %}
       <footer class="footer">
         <div class="container is-max-desktop">
@@ -94,6 +96,9 @@ footer: true
             <div class="column is-one-quarter">
               <h3>Navigation</h3>
               <ul>
+                <li>
+                  <a href="/">Home</a>
+                </li>
                 <li>
                   <a href="/posts">Blog</a>
                 </li>
@@ -104,28 +109,27 @@ footer: true
                   <a href="/photography">Photography</a>
                 </li>
                 <li>
-                  <a href="/about">Contact</a>
+                  <a href="/about">About</a>
                 </li>
               </ul>
             </div>
             <div class="column is-one-quarter">
               <h3>External Links</h3>
-
               <ul>
                 <li>
-                  <a href="">ORCID</a>
+                  <a href="https://orcid.org/0000-0001-5343-2235">ORCID</a>
                 </li>
                 <li>
-                  <a href="">Semantic Scholar</a>
+                  <a href="https://www.semanticscholar.org/author/David-Landry/2072096651">Semantic Scholar</a>
                 </li>
                 <li>
-                  <a href="">LinkedIn</a>
+                  <a href="https://linkedin.com/in/davidlandry93">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="">Github</a>
+                  <a href="https://github.com/davidlandry93">Github</a>
                 </li>
                 <li>
-                  <a href="">X</a>
+                  <a href="https://x.com/davidlandry93">Twitter/X</a>
                 </li>
               </ul>
             </div>

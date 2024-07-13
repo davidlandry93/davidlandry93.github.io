@@ -6,31 +6,34 @@ collections: ["publications"]
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="column is-8 is-offset-2">
-      <h1 class="title is-4">All posts</h1>
-      <table class="table post-table">
-        <colgroup>
-          <col style="width:20%">
-          <col style="width:80%">
-        </colgroup>
-        {%- for post in collections.post | reverse -%}
-          <tbody>
-            <tr>
-              <td>
-                <p class="post-table-row-p">
-                  <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
-                </p>
-              </td>
-              <td class="post-title-table">
-                <a href="{{ post.url }}">{{ post.data.post_title }}</a>
-              </td>
-            </tr>
-          {%- endfor -%}
-        </tbody>
-      </table>
-      <p>
-        <a href="/">Find out more</a>
-      </p>
+    <h1 class="title is-3">Blog</h1>
+    <p class="intro">
+      I like to write about <a href="/research">my research</a>, knowledge management, 
+      among other things.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">All posts</h2>
+
+    <div class="post-grid smaller">
+    {%- for post in collections.post | reverse -%}
+        <div class="post-card smaller">
+          <div class="post-card-background" style="background-image:url('/images/{{post.data.image}}');">
+          </div>
+          <a  class="post-card-content" href="{{post.url}}">
+              <div class="textual-content">
+              <h3>{{ post.data.post_title }}</h3>
+              <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+              </div>
+          </a>
+        </div>
+    {%- endfor -%}
     </div>
+    <p class="loopback-post">
+      <a href="/">Find out more</a>
+    </p>
   </div>
 </section>

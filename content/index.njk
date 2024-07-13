@@ -6,22 +6,20 @@ footer: true
 collections: ["posts"]
 ---
 
-<section class="hero">
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
       <div class="columns">
         <div class="column is-two-thirds">
           <h1 class="title">Hi, I'm David.</h1>
           <p>I’m a PhD candidate at INRIA Paris. I study the intersection of Artificial Intelligence and atmospheric sciences.</p>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
 <section class="section menu-cards">
   <div class="container is-max-desktop">
-    <h2>Contents</h2>
+    <h2 class="title is-4">Contents</h2>
     <div class="home-menu-grid">
       <div>
         <a href="/posts">
@@ -66,7 +64,7 @@ collections: ["posts"]
         </a>
       </div>
       <div>
-        <a href="/posts">
+        <a href="/about">
           @@@@@@@@@@@@@@@@@@@@
           @@@@@@@@@@@@@@@@@@@@
           @@@@@@@@@@@@@@@@@@@@
@@ -86,22 +84,22 @@ collections: ["posts"]
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2>Latest posts</h2>
+    <h2 class="title is-4">Latest posts</h2>
         <div class="post-grid">
         {%- for post in collections.post | reverse -%}
-            <a class="post-card" href="{{post.url}}">
-            <div class="post-card-background" style="background-image:url('/images/{{post.data.image}}');">
+            <div class="post-card" >
+              <div class="post-card-background" style="background-image:url('/images/{{post.data.image}}');">
+              </div>
+              <a class="post-card-content" href="{{post.url}}">
+                  <div class="textual-content">
+                  <h3>{{ post.data.post_title }}</h3>
+                  <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+                  </div>
+              </a>
             </div>
-            <div class="content">
-                <div class="textual-content">
-                <h3>{{ post.data.post_title }}</h3>
-                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
-                </div>
-            </div >
-            </a>
         {%- endfor -%}
         </div>
-    <a href="/posts/">View more</a>
+    <a href="/posts/">More posts</a>
   </div>
 
 </section>

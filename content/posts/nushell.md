@@ -23,7 +23,7 @@ Nushell is a contemporary, Rust-based shell interpreter.
 It borrows concepts from a lot of places, including PowerShell, TypeScript, and functional programming.
 But I think what makes it better than the other shell alternatives is one key realization: **it's all tables and dicts**.
 
-# The problem
+## The problem
 
 In the Bash ecosystem, data manipulation is split between the command itself and utilities.
 Source commands like `ls` and `top` provide text data, which is either processed in-place or through a utility like `grep`, `awk` or `sort`.
@@ -40,7 +40,7 @@ With three basic commands, we learned three ways to sort by a column.
 This kind of complexity is why I reach for Google very often when I write a command, even with 15 years of experience using Linux.
 It's why people are developing very elaborate terminal emulators to translate natural language into Bash commands.
 
-# The solution
+## The solution
 
 Once someone finally realizes that most of these utilities deal with tables and dicts, there are improvements to be made.
 A single, generic set of data manipulation utilities can be developed.
