@@ -93,7 +93,7 @@ collections: ["posts"]
               <a class="post-card-content" href="{{post.url}}">
                   <div class="textual-content">
                   <h3>{{ post.data.post_title }}</h3>
-                  <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
+                  <time datetime="{{ post.data.post_date | htmlDateString }}">{{ post.data.post_date | readableDate("yyyy.LL.dd") }}</time>
                   </div>
               </a>
             </div>

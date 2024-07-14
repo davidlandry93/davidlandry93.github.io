@@ -49,7 +49,7 @@ a.to-filter {
     background-color: var(--bulma-scheme-main);
     margin-bottom: 1em;
     width: 30vw;
-    min-width: 340px;
+    min-width: 300px;
 
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.279);
 }
@@ -78,6 +78,7 @@ a.to-filter {
     display: flex;
 
     font-family: var(--typewriter-font);
+    font-size: 0.9em;
 }
 
 .title-card-bottom-left {
