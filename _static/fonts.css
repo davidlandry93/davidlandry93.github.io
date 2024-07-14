@@ -5,40 +5,40 @@
 
 @font-face {
   font-family: InterTight;
-  src: url('/fonts/intertight.ttf');
+  src: url('fonts/intertight.ttf');
 }
 
 
 @font-face {
   font-family: Lexend;
-  src: url('/fonts/lexend.ttf');
+  src: url('fonts/lexend.ttf');
 }
 
 
 @font-face {
   font-family: 'Courier Prime';
-  src: url('/fonts/CourierPrime-Regular.ttf');
+  src: url('fonts/CourierPrime-Regular.ttf');
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Courier Prime';
-  src: url('/fonts/CourierPrime-Italic.ttf');
+  src: url('fonts/CourierPrime-Italic.ttf');
   font-style: italic;
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Courier Prime';
-  src: url('/fonts/CourierPrime-Bold.ttf');
+  src: url('fonts/CourierPrime-Bold.ttf');
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Courier Prime';
-  src: url('/fonts/CourierPrime-BoldItalic.ttf');
+  src: url('fonts/CourierPrime-BoldItalic.ttf');
   font-style: italic;
   font-weight: 700;
 }

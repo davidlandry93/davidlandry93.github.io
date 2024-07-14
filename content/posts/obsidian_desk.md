@@ -13,8 +13,6 @@ post_summary: |
   of your notes for a particular topic.
 ---
 
-<p class="post-topics">topics: Knowledge Management, Obsidian, UX</p>
-
 **I just published a plugin for [Obsidian](https://www.obsidian.md) called
 [Desk](https://github.com/davidlandry93/obsidian-desk). Here, I want to explain the
 rationale behind it, and why I think it's a useful addition to almost any vault.**

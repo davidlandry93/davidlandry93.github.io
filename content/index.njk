@@ -86,7 +86,7 @@ collections: ["posts"]
   <div class="container is-max-desktop">
     <h2 class="title is-4">Latest posts</h2>
         <div class="post-grid">
-        {%- for post in collections.post | reverse -%}
+        {%- for post in collections.post | sort(attribute='post_date') | reverse -%}
             <div class="post-card" >
               <div class="post-card-background" style="background-image:url('/images/{{post.data.image}}');">
               </div>

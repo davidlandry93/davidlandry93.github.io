@@ -6,7 +6,7 @@
     --bulma-scheme-main: #fafafa;
     --ruler-red: #ed7f7f;
     --base-font: "Lexend", "Arial", sans-serif;
-    --typewriter-font: "Courier Primer", "Courier New", sans-serif;
+    --typewriter-font: "Courier Primer", "Courier New", courier;
     --bulma-hero-body-padding-medium: 1em;
     --bulma-strong-color: black;
 }
@@ -80,7 +80,7 @@ a:hover {
     overflow: hidden;
     color: black;
     display: block;
-    width: 228px;
+    width: 226px;
     height: 150px;
     background-color: white;
     line-height: 0.8em;
