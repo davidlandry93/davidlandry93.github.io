@@ -5,8 +5,8 @@
   "headline": "{{ post_title }}",
   "name": "{{ post_title }}",
   "description": "{{ post_summary }}",
-  "datePublished": "{{ post_date | htmlDateString }}",
-  "dateModified": "{{ date_modified | default(post_date) | htmlDateString }}",
+  "datePublished": "{{ page.date | htmlDateString }}",
+  "dateModified": "{{ date_modified | default(page.date) | htmlDateString }}",
   "url": "{{ page.url }}",
   "author" : {
     "@type": "Person",

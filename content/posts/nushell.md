@@ -1,6 +1,6 @@
 ---
 post_title: Why Nushell is great
-post_date: 2023-08-14
+date: 2023-08-14
 image: nushell_crop.png
 keywords:
   - Linux

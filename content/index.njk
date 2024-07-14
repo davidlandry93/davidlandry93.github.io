@@ -3,7 +3,7 @@ layout: base.njk
 eleventyImport:
 navbar: true
 footer: true
-collections: ["posts"]
+collections: ["post"]
 ---
 
 <section class="section">
@@ -86,14 +86,14 @@ collections: ["posts"]
   <div class="container is-max-desktop">
     <h2 class="title is-4">Latest posts</h2>
         <div class="post-grid">
-        {%- for post in collections.post | sort(attribute='post_date') | reverse -%}
+        {%- for post in collections.post | reverse -%}
             <div class="post-card" >
               <div class="post-card-background" style="background-image:url('/images/{{post.data.image}}');">
               </div>
               <a class="post-card-content" href="{{post.url}}">
                   <div class="textual-content">
                   <h3>{{ post.data.post_title }}</h3>
-                  <time datetime="{{ post.data.post_date | htmlDateString }}">{{ post.data.post_date | readableDate("yyyy.LL.dd") }}</time>
+                  <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("yyyy.LL.dd") }}</time>
                   </div>
               </a>
             </div>
