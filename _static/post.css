@@ -146,6 +146,7 @@ a.to-filter {
     font-size: 1.3em;
     font-weight: bold;
     margin-top: 3em;
+    color: black;
 }
 
 .post-content h2:not(:first-child) {

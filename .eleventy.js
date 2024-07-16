@@ -22,7 +22,12 @@ module.exports = function (eleventyConfig) {
     });
 
 
-    eleventyConfig.addPassthroughCopy({ "_static/": "/" });
+    eleventyConfig.addPassthroughCopy({ 
+        "_static/": "/",
+        "node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js": "assets/photoswipe-lightbox.esm.min.js",
+        "node_modules/photoswipe/dist/photoswipe.esm.min.js": "assets/photoswipe.esm.min.js",
+        "node_modules/photoswipe/dist/photoswipe.css": "assets/photoswipe.css"
+     });
 
     return {
         dir: {

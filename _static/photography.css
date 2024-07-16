@@ -1,0 +1,9 @@
+
+#photoswipe-container {
+  position: relative;
+}
+
+
+.pswp {
+  position: absolute!important;
+}
