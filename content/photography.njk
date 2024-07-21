@@ -1,6 +1,21 @@
 ---
 layout: base.njk
+collections: ["photos"]
 ---
+
+
+
+<script type="module">
+  import PhotoSwipeLightbox from '/assets/photoswipe-lightbox.esm.min.js';
+
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    pswpModule: () => import('/assets/photoswipe.esm.min.js'),
+  });
+  lightbox.init();
+</script>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -11,5 +26,19 @@ layout: base.njk
       I'm also experimenting with film photography using a Ricoh 500 ST.
       Find more on <a href="https://www.instagram.com/bigelow133/">Instagram</a>.
     </p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div id="photoswipe-container">
+    <div class="pswp">
+    </div>
+  </div>
+
+  <div id="gallery" class="pswp-gallery">
+    {% for photo in photos %}
+      {% galleryImage "photos/" + photo.file, photo.caption %}
+    {% endfor %}
   </div>
 </section>
