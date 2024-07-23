@@ -102,6 +102,8 @@ module.exports = function (eleventyConfig) {
         return input_array.slice(0, limit);
     });
 
+    eleventyConfig.addPassthroughCopy("img")
+
     eleventyConfig.addPassthroughCopy({ 
         "_static/": "/",
         "node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js": "assets/photoswipe-lightbox.esm.min.js",
