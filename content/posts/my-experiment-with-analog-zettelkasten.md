@@ -1,7 +1,7 @@
 ---
 post_title: I used an analog Zettelkasten system for 100 notes. Here is what I learned.
 date: 2023-09-23
-image: pen_watercolor_crop.jpg
+image: images/pen_watercolor_crop.jpg
 keywords:
   - Zettelkasten
   - Knowledge Management

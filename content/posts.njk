@@ -21,7 +21,7 @@ collections: ["publications"]
     <div class="post-grid smaller">
     {%- for post in collections.post | reverse -%}
         <div class="post-card smaller">
-          <div class="post-card-background" style="background-image:url('/images/{{post.data.image}}');">
+          <div class="post-card-background" style="background-image:url('{{post.data.images.thumbnail}}');">
           </div>
           <a  class="post-card-content" href="{{post.url}}">
               <div class="textual-content">

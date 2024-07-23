@@ -1,7 +1,7 @@
 ---
 post_title: A Desk for Obsidian
 date: 2023-08-26
-image: desk_crop.png
+image: images/desk_crop.png
 keywords:
   - Knowledge Management
   - Obsidian

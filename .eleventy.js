@@ -42,6 +42,24 @@ module.exports = function (eleventyConfig) {
     })
 
 
+    eleventyConfig.addShortcode("imageAsFile", async function (src, alt) {
+        let options = {
+            outputDir: "/img/",
+            urlPath: "/img/"
+        }
+
+		let metadata = await Image(src, {
+			widths: ["auto"],
+			formats: ["avif"],
+		}, options);
+
+
+        fullsize = metadata.avif[0]
+
+        return fullsize.outputPath
+      })
+
+
     eleventyConfig.addShortcode("galleryImage", async function (src, alt) {
         let options = {
             outputDir: "/img/",
