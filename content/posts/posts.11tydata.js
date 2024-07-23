@@ -2,7 +2,7 @@
 const Image = require('@11ty/eleventy-img');
 
 const options = {
-    outputDir: "./_site/img",
+    outputDir: "./_static/img",
     urlPath: "/img/"
 }
 

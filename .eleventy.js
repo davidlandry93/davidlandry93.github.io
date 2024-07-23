@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
 			widths: [350, "auto"],
 			formats: ["webp", "jpeg"],
 		}, {
-            outputDir: "./_site/img/",
+            outputDir: "_static/img/",
             urlPath: "/img/"
         });
 
@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
 		};
 
         let options = {
-            outputDir: "./_site/img/",
+            outputDir: "_static/img/",
             urlPath: "/img/"
         }
 
@@ -47,7 +47,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addShortcode("imageAsFile", async function (src, alt) {
         let options = {
-            outputDir: "./_site/img/",
+            outputDir: "_static/img/",
             urlPath: "/img/"
         }
 
@@ -65,7 +65,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addShortcode("galleryImage", async function (src, alt) {
         let options = {
-            outputDir: "./_site/img/",
+            outputDir: "_static/img/",
             urlPath: "/img/"
         }
 
@@ -102,8 +102,6 @@ module.exports = function (eleventyConfig) {
         return input_array.slice(0, limit);
     });
 
-    eleventyConfig.addPassthroughCopy("img");
-
     eleventyConfig.addPassthroughCopy({ 
         "_static/": "/",
         "node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js": "assets/photoswipe-lightbox.esm.min.js",
@@ -115,7 +113,8 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: "content",
             includes: "../_includes",
-            data: "../_data"
+            data: "../_data",
+            output: "_site"
         }
     }
 };
