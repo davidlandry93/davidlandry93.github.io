@@ -16,12 +16,12 @@ module.exports = {
         images: async (data) => {
             const img = await Image(data.image, {
                 "widths": ["auto", 300],
-                "formats": ["avif"]
+                "formats": ["webp"]
             }, options)
 
             return {
-                "fullsize": img.avif[1].url,
-                "thumbnail": img.avif[0].url,
+                "fullsize": img.webp[1].url,
+                "thumbnail": img.webp[0].url,
             }
         }
     }

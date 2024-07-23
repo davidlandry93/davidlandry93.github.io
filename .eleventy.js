@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
 		let metadata = await Image(src, {
 			widths: [350, "auto"],
-			formats: ["avif", "jpeg"],
+			formats: ["webp", "jpeg"],
 		});
 
 
@@ -50,11 +50,11 @@ module.exports = function (eleventyConfig) {
 
 		let metadata = await Image(src, {
 			widths: ["auto"],
-			formats: ["avif"],
+			formats: ["webp"],
 		}, options);
 
 
-        fullsize = metadata.avif[0]
+        fullsize = metadata.webp[0]
 
         return fullsize.outputPath
       })
@@ -68,12 +68,12 @@ module.exports = function (eleventyConfig) {
 
 		let metadata = await Image(src, {
 			widths: [350, "auto"],
-			formats: ["avif"],
+			formats: ["webp"],
 		}, options);
 
 
-        thumbnail = metadata['avif'][0]
-        fullsize = metadata['avif'][1]
+        thumbnail = metadata['webp'][0]
+        fullsize = metadata['webp'][1]
 
         return `<a href="${fullsize.url}" 
         data-pswp-width="${fullsize.width}" 
