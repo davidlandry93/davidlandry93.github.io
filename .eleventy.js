@@ -3,9 +3,12 @@ const { parse } = require("csv-parse/sync");
 
 const { DateTime } = require('luxon')
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginRss);
+    eleventyConfig.addPlugin(syntaxHighlight);
 
 
     eleventyConfig.addDataExtension("csv", (contents) => {

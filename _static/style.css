@@ -1,6 +1,7 @@
 @import "fonts.css";
 @import "research.css";
 @import "index.css";
+@import "code.css";
 
 :root {
     --bulma-scheme-main: #fafafa;
