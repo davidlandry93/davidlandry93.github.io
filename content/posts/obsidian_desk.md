@@ -2,6 +2,7 @@
 post_title: A Desk for Obsidian
 date: 2023-08-26
 image: images/desk_crop.png
+templateEngineOverride: njk,md
 keywords:
   - Knowledge Management
   - Obsidian
@@ -33,7 +34,7 @@ The search dialog is self-explanatory. Backlinks are like a keyword search. If I
 my `Knowledge Management` note, I get to see all the other notes where I made a link to
 that page.  Here's a screenshot where we see both of these search tools in action.
 
-![How search results are displayed in a default Obsidian configuration.](/images/obsidian_small_search.png)
+{% image "images/obsidian_small_search.png", "How search results are displayed in a default Obsidian configuration.", "100%" %}
 
 Notice how the search results and the backlinks are displayed off-center and have
 smaller font. That's after I've enabled the option to show the backlinks below the note.
@@ -44,7 +45,7 @@ What if I want to browse my notes on a topic, and see them at a glance? There's 
 comfortable way to do this in my opinion. My extension, Desk, changes this. Here's a
 screenshot to give you the idea.
 
-![How search results are displayed in the Desk extension for Obsidian.](/images/obsidian_desk_screenshot.png)
+{% image "images/obsidian_desk_screenshot.png", "How search results are displayed in the Desk extension for Obsidian.", "100%" %}
 
 It displays search results prominently. It shows multiple notes at once, which is useful
 when you want to explore a topic with a birds-eye view. The notes are presented in a 4x6
